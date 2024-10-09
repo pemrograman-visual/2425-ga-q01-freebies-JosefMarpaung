@@ -8,7 +8,7 @@ Untuk mengimplementasikan program Freebies, Ucok selanjutnya merancang skematik 
 2. Aplikasi selanjutnya menghitung nilai total transaksi. Untuk transaksi yang melibatkan paling sedikit ```2``` buah buku dengan nilai minimum 100.00 USD digratiskan untuk item yang paling murah.
 3. Aplikasi menampilkan nilai transaksi dalam satu baris keluaran dalam dua digit presisi (gunakan fungsi ToFixed).
 
-Note: semua skema ppengujian akan memasukkan telah dirancang untuk memberikan paling sedikit ```2``` buah masukkan.
+Note: semua skema ppengujian akan memasukkan telah dirancang untuk memberikan paling sedikit ```2``` buah masukkan.24.99
 
 ### Example 1
 

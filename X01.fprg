@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="X01"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-09 04:15:41 PM"/>
+        <attribute name="created" value="QVNVUztERVNLVE9QLVBDN1QyVVY7MjAyNC0xMC0wOTswMzowODo0NyBQTTsyNjkw"/>
+        <attribute name="edited" value="QVNVUztERVNLVE9QLVBDN1QyVVY7MjAyNC0xMC0wOTswNDoxNTo0MSBQTTsyOzI3OTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="harga, kecil" type="Real" array="False" size=""/>
+            <declare name="total, total1" type="Real" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <input variable="harga"/>
+            <assign variable="kecil" expression="1000"/>
+            <while expression="harga!=0">
+                <if expression="harga&lt;kecil">
+                    <then>
+                        <assign variable="kecil" expression="harga"/>
+                        <assign variable="total" expression="total+kecil"/>
+                    </then>
+                    <else>
+                        <assign variable="harga" expression="harga"/>
+                        <assign variable="total" expression="total+harga"/>
+                    </else>
+                </if>
+                <input variable="harga"/>
+            </while>
+            <if expression="total&gt;=100.00">
+                <then>
+                    <assign variable="total1" expression="total-kecil"/>
+                </then>
+                <else>
+                    <assign variable="total" expression="total"/>
+                </else>
+            </if>
+            <output expression="toFixed(total1,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
