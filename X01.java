@@ -3,32 +3,33 @@
 import java.util.*;
 import java.lang.Math;
 
-public class X01{
+public class X01 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        double harga, kecil;
-        double total, total1;
+        double termurah, price, total;
 
         total = 0;
-        harga = Double.parseDouble(input.nextLine());
-        kecil = 1000;
-        while (harga != 0) {
-            if (harga < kecil) {
-                kecil = harga;
-                total = total + kecil;
+        termurah = 999;
+        price = Double.parseDouble(input.nextLine());
+        while (price != 0) {
+            if (price == 0) {
             } else {
-                harga = harga;
-                total = total + harga;
+                if (price < termurah) {
+                    termurah = price;
+                } else {
+                    price = price;
+                }
+                total = total + price;
             }
-            harga = Double.parseDouble(input.nextLine());
+            price = Double.parseDouble(input.nextLine());
         }
-        if (total >= 100.0) {
-            total1 = total - kecil;
+        if (total >= 100) {
+            total = total - termurah;
         } else {
             total = total;
         }
-        System.out.println(toFixed(total1,2));
+        System.out.println(toFixed(total,2));
     }
     
     private static String toFixed(double value, int digits) {

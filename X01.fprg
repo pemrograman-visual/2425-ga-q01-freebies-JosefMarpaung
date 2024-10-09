@@ -2,42 +2,46 @@
 <flowgorithm fileversion="4.2">
     <attributes>
         <attribute name="name" value="X01"/>
-        <attribute name="authors" value="ASUS"/>
+        <attribute name="authors" value="ACER"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-09 04:30:07 PM"/>
-        <attribute name="created" value="QVNVUztERVNLVE9QLVBDN1QyVVY7MjAyNC0xMC0wOTswMzowODo0NyBQTTsyNjkw"/>
-        <attribute name="edited" value="QVNVUztERVNLVE9QLVBDN1QyVVY7MjAyNC0xMC0wOTswNDozMDowNyBQTTszOzI3OTI="/>
+        <attribute name="saved" value="2024-10-09 04:39:34 PM"/>
+        <attribute name="created" value="QUNFUjtNWUhTWkU7MjAyNC0xMC0wOTswMzoxMjo1MCBQTTsyMDM2"/>
+        <attribute name="edited" value="QUNFUjtNWUhTWkU7MjAyNC0xMC0wOTswNDowNDowMiBQTTsyOzIxNDQ="/>
+        <attribute name="edited" value="QVNVUztERVNLVE9QLVBDN1QyVVY7MjAyNC0xMC0wOTswNDozOTozNCBQTTsxOzI3OTk="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="harga, kecil" type="Real" array="False" size=""/>
-            <declare name="total, total1" type="Real" array="False" size=""/>
+            <declare name="Termurah, Price, Total" type="Real" array="False" size=""/>
             <assign variable="total" expression="0"/>
-            <input variable="harga"/>
-            <assign variable="kecil" expression="1000"/>
-            <while expression="harga!=0">
-                <if expression="harga&lt;kecil">
-                    <then>
-                        <assign variable="kecil" expression="harga"/>
-                        <assign variable="total" expression="total+kecil"/>
-                    </then>
+            <assign variable="Termurah" expression="999"/>
+            <input variable="Price"/>
+            <while expression="Price != 0">
+                <if expression="Price = 0">
+                    <then/>
                     <else>
-                        <assign variable="harga" expression="harga"/>
-                        <assign variable="total" expression="total+harga"/>
+                        <if expression="Price &lt; Termurah">
+                            <then>
+                                <assign variable="Termurah" expression="Price"/>
+                            </then>
+                            <else>
+                                <assign variable="Price" expression="Price"/>
+                            </else>
+                        </if>
+                        <assign variable="Total" expression="Total + Price"/>
                     </else>
                 </if>
-                <input variable="harga"/>
+                <input variable="Price"/>
             </while>
-            <if expression="total&gt;=100.00">
+            <if expression="Total &gt;= 100">
                 <then>
-                    <assign variable="total1" expression="total-kecil"/>
+                    <assign variable="Total" expression="Total-Termurah"/>
                 </then>
                 <else>
-                    <assign variable="total" expression="total"/>
+                    <assign variable="Total" expression="Total"/>
                 </else>
             </if>
-            <output expression="toFixed(total1,2)" newline="True"/>
+            <output expression="tofixed(Total,2)" newline="True"/>
         </body>
     </function>
 </flowgorithm>
